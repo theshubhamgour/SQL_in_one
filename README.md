@@ -20,3 +20,4 @@ Relational manner: follows a pattern (In the form of tables) we can connect tabl
 # Download MySQL
 Download MySQL Software: https://dev.mysql.com/downloads/mysql/
 
+# Installation
