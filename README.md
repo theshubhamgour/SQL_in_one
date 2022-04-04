@@ -20,7 +20,7 @@ Relational manner: follows a pattern (In the form of tables) we can connect tabl
 # Download MySQL
 Download MySQL Software: https://dev.mysql.com/downloads/mysql/
 
-# Table Operations
+# Database Operations
 1. Show databases : used to view databases which arre present in the database server
  ```show databases; ```
  
@@ -33,6 +33,7 @@ Download MySQL Software: https://dev.mysql.com/downloads/mysql/
 4. To delete a database we make use of drop : drop database [database_name]
 ```drop database employee```
 
+# Table operations
 5. To create a table we have to make note of two things first create a ```table``` and ```columns```
 create table [table_name] (col 1,col 2,col 3,col 4 ,....)
 
@@ -70,8 +71,54 @@ I used primary to key to make it unique to identify the user as an unique entry
  
  check the table name ```show tables```;
  
- 10. To delete all the records of the table we make use of truncate command
+ 10. To delete all the records of the table we make use of truncate command.
  NOTE: ONLY THE DATA IN THE  TABLE WILL GET DELETED NOT THE TABLE!
  ```truncate table student;```
  
+ 11. To feed data into table we makw use of ```insert into``` command: insert into [table_name](id,name,city) values(id(in int),name(in char),city(in char));
+ ```insert into student(id,name,city) values(15,"Aditya Jain","Nagpur");```
  
+ 12. In order to check the entry we just made we makw use of : select * from [table_name];
+ ```select * from student;```
+ ```
+ +----+-------------+--------+
+| id | name        | city   |
++----+-------------+--------+
+| 15 | Aditya Jain | Nagpur |
++----+-------------+--------+
+```
+13. To add a column in table: alter table [table_name] add [col_name];
+```alter table student add country varchar(50);```
+
+14. To update entry we make use of : update [table_name] set [col_name] = "Value";
+NOTE: IF YOU RUN THIS COMMAND ```update student set country = "India";``` ENTIRE COLUMN OF COUNTRY WILL TURN INTO INDIA.
+
+Type: ``` select * from student; ``` to check the entry
+```
++----+-------------+--------+---------+
+| id | name        | city   | country |
++----+-------------+--------+---------+
+| 15 | Aditya Jain | Nagpur | India   |
++----+-------------+--------+---------+
+```
+
+15. Lets add more data in the table: 
+```
+ insert into student(id,name,city) values(10, "Shubham","Nagpur");
+ ```
+ 16. In Order to add data to a specifiic id we make use of where:
+ 
+``` update student set country= "India" where id = 10;
+    update student set country= "Saudi Arab" where id = 15;
+```
+
+Type ```select * from student```
+```
++----+-------------+--------+------------+
+| id | name        | city   | country    |
++----+-------------+--------+------------+
+| 10 | Shubham     | Nagpur | India      |
+| 15 | Aditya Jain | Nagpur | Saudi Arab |
++----+-------------+--------+------------+
+```
+
