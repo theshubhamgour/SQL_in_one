@@ -41,3 +41,17 @@ create table [table_name] (col 1,col 2,col 3,col 4 ,....)
 # Primary key:  
 A primary key is the column or columns that contain values that uniquely identify each row in a table
 I used primary to key to make it unique to identify the user as an unique entry
+
+6. to look the table that we juat created we make use of ```show tables;```
+
+7. Suoppose you forgot what was the column name and the property of the table thn you can make use of desc for describing the table. desc [table_name]; 
+ ```desc employee;```
+
+8. to delete a table we make use of drop. 
+```drop employee;```
+
+9. to rename a table name we make use of alter: alter table [old_name] rename to [new_name];
+ ```alter table employee rename to student;```
+ 
+ check the table name ```show tables```;
+ 
