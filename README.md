@@ -55,3 +55,6 @@ I used primary to key to make it unique to identify the user as an unique entry
  
  check the table name ```show tables```;
  
+ 10. SQL Truncate command places a table and page lock to remove all records. 
+ ```truncate table student;```
+ 
