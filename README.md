@@ -18,6 +18,5 @@ Relational manner: follows a pattern (In the form of tables) we can connect tabl
 ![](https://programmer.group/images/article/4afb276e564fd636f0486cd37abeed48.jpg)
 
 # Download MySQL
-
-![Download MySQL Software](https://dev.mysql.com/downloads/mysql/)
+Download MySQL Software: https://dev.mysql.com/downloads/mysql/
 
