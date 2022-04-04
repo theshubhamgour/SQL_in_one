@@ -122,3 +122,24 @@ Type ```select * from student```
 +----+-------------+--------+------------+
 ```
 
+17. For inserting multiple valuies at once: 
+```
+insert into student values (1,"Pradhynesh","Bhandara","Delhi"),
+                           (2,"Shubham Bedarkar","Amravati","MP"),
+                           (3,"Neha","Berlin","Germany"),  
+                           (4,"Sayali","Mathura","India");
+```
+
+type: ```select * from student;``` to check the entry we made just now to ensure everything is going properly.
+```
+
++----+------------------+----------+------------+
+| id | name             | city     | country    |
++----+------------------+----------+------------+
+|  1 | Pradhynesh       | Bhandara | Delhi      |
+|  2 | Shubham Bedarkar | Amravati | MP         |
+|  3 | Neha             | Berlin   | Germany    |
+|  4 | Sayali           | Mathura  | India      |
+| 10 | Shubham          | Nagpur   | India      |
+| 15 | Aditya Jain      | Nagpur   | Saudi Arab |
++----+------------------+----------+------------+
