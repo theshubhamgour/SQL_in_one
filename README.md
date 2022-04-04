@@ -20,7 +20,7 @@ Relational manner: follows a pattern (In the form of tables) we can connect tabl
 # Download MySQL
 Download MySQL Software: https://dev.mysql.com/downloads/mysql/
 
-# Get Started with MySQL
+# Table Operations
 1. Show databases : used to view databases which arre present in the database server
  ```show databases; ```
  
@@ -42,19 +42,36 @@ create table [table_name] (col 1,col 2,col 3,col 4 ,....)
 A primary key is the column or columns that contain values that uniquely identify each row in a table
 I used primary to key to make it unique to identify the user as an unique entry
 
-6. to look the table that we juat created we make use of ```show tables;```
+6. Suoppose you forgot what was the column name and the property of the table thn you can make use of desc for describing the table. desc [table_name]; 
+ ```desc user;```
+```
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| id    | int          | NO   | PRI | NULL    |       |
+| name  | varchar(150) | NO   |     | NULL    |       |
+| city  | varchar(150) | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+```
 
-7. Suoppose you forgot what was the column name and the property of the table thn you can make use of desc for describing the table. desc [table_name]; 
- ```desc employee;```
+7. Type ```show tables;``` to view the table that you've created
+```
++--------------------+
+| Tables_in_employee |
++--------------------+
+| user               |
++--------------------+
+```
+8. To drop a table just like the database we have drop earlier we make use of:  drop table [table_name] and the table will get deleted.
+```drop table user;```
 
-8. to delete a table we make use of drop. 
-```drop employee;```
-
-9. to rename a table name we make use of alter: alter table [old_name] rename to [new_name];
- ```alter table employee rename to student;```
+9. To Rename a table name we make use of alter: alter table [old_name] rename to [new_name];
+ ```alter table user rename to student;```
  
  check the table name ```show tables```;
  
- 10. SQL Truncate command places a table and page lock to remove all records. 
+ 10. To delete all the records of the table we make use of truncate command
+ NOTE: ONLY THE DATA IN THE  TABLE WILL GET DELETED NOT THE TABLE!
  ```truncate table student;```
+ 
  
