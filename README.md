@@ -292,3 +292,95 @@ select * from student where id in(2,4,10);
 | 10 | Shubham          | Nagpur   | India   |
 +----+------------------+----------+---------+
 ```
+26. Limit: Useful to sort Top entries and other operations
+Suppose you want to sort top 4 entries then we make use of limit
+
+```
+select * from student where id in(2,4,10);
+```
+```
++----+------------------+----------+---------+
+| id | name             | city     | country |
++----+------------------+----------+---------+
+|  2 | Shubham Bedarkar | Amravati | MP      |
+|  4 | Sayali           | Mathura  | India   |
+| 10 | Shubham          | Nagpur   | India   |
++----+------------------+----------+---------+
+```
+
+Now You want to leave top 2 entries and want to print the remaining top 3 entries after the top tow then we may use ```offset```
+```
+ select * from student limit 3 offset 2;
+ ```
+ Here 3 specifiee the values to be printed in the terminal and 2 specifies that we have to exclude the top 2 entires.
+ ```
++----+---------+---------+---------+
+| id | name    | city    | country |
++----+---------+---------+---------+
+|  3 | Neha    | Berlin  | Germany |
+|  4 | Sayali  | Mathura | India   |
+| 10 | Shubham | Nagpur  | India   |
++----+---------+---------+---------+
+```
+
+27: Order by: Ascending and Decending
+
+To print in Decending order we make use of below command
+```
+select * from student order by name desc;
+```
+```
++----+------------------+----------+---------+
+| id | name             | city     | country |
++----+------------------+----------+---------+
+|  2 | Shubham Bedarkar | Amravati | MP      |
+| 10 | Shubham          | Nagpur   | India   |
+|  4 | Sayali           | Mathura  | India   |
+|  1 | Pradhynesh       | Bhandara | Delhi   |
+|  3 | Neha             | Berlin   | Germany |
++----+------------------+----------+---------+
+
+```
+Now if you want to display in ascending manner then make use of below command
+```
+mysql> select * from student order by name asc;
+```
+```
++----+------------------+----------+---------+
+| id | name             | city     | country |
++----+------------------+----------+---------+
+|  3 | Neha             | Berlin   | Germany |
+|  1 | Pradhynesh       | Bhandara | Delhi   |
+|  4 | Sayali           | Mathura  | India   |
+| 10 | Shubham          | Nagpur   | India   |
+|  2 | Shubham Bedarkar | Amravati | MP      |
++----+------------------+----------+---------+
+
+```
+Same can be done with ID
+
+```
+mysql> select * from student order by id asc;
++----+------------------+----------+---------+
+| id | name             | city     | country |
++----+------------------+----------+---------+
+|  1 | Pradhynesh       | Bhandara | Delhi   |
+|  2 | Shubham Bedarkar | Amravati | MP      |
+|  3 | Neha             | Berlin   | Germany |
+|  4 | Sayali           | Mathura  | India   |
+| 10 | Shubham          | Nagpur   | India   |
++----+------------------+----------+---------+
+5 rows in set (0.00 sec)
+
+mysql> select * from student order by id desc;
++----+------------------+----------+---------+
+| id | name             | city     | country |
++----+------------------+----------+---------+
+| 10 | Shubham          | Nagpur   | India   |
+|  4 | Sayali           | Mathura  | India   |
+|  3 | Neha             | Berlin   | Germany |
+|  2 | Shubham Bedarkar | Amravati | MP      |
+|  1 | Pradhynesh       | Bhandara | Delhi   |
++----+------------------+----------+---------+
+5 rows in set (0.00 sec)
+```
