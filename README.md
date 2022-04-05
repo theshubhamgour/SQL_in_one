@@ -231,7 +231,7 @@ Here only one conditon i.e: city name is matching the records hence we got the b
 +----+------+--------+---------+
 ```
 
-24. Range: Searching and Sorting 
+24. Range: Searching and Sorting (Between)
 
 Suppose you want to sort those people/employee whos id ranges between 1 to 5 then we will make use of the conditions given below.
  ```
@@ -260,5 +260,35 @@ select * from student where id between 1 and 4;
 |  2 | Shubham Bedarkar | Amravati | MP      |
 |  3 | Neha             | Berlin   | Germany |
 |  4 | Sayali           | Mathura  | India   |
++----+------------------+----------+---------+
+```
+
+25. Searching multiple records at the same time: (IN OPERATOR)
+Consider that you want to see those entires whose ids are 2,10 and 3 then we will make use of the below command.
+```
+select * from student where id = 2 or id = 10 or id  = 3;
+```
+```
++----+------------------+----------+---------+
+| id | name             | city     | country |
++----+------------------+----------+---------+
+|  2 | Shubham Bedarkar | Amravati | MP      |
+|  3 | Neha             | Berlin   | Germany |
+| 10 | Shubham          | Nagpur   | India   |
++----+------------------+----------+---------+
+```
+
+NOTE: IN THE ABOVE COMMAND WE HAVE TO USE MULTRIPLE OR SO TO OVERCOME THAT WE CAN MAKE USE OF ```IN()```
+
+```
+select * from student where id in(2,4,10);
+```
+```
++----+------------------+----------+---------+
+| id | name             | city     | country |
++----+------------------+----------+---------+
+|  2 | Shubham Bedarkar | Amravati | MP      |
+|  4 | Sayali           | Mathura  | India   |
+| 10 | Shubham          | Nagpur   | India   |
 +----+------------------+----------+---------+
 ```
