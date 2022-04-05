@@ -207,3 +207,58 @@ select distinct country from student;
 | India   |
 +---------+
 ```
+22. AND: if you want to add two conditons at a time
+```
+ select * from student where country= "india" AND city = "mathura";
+```
+```
++----+--------+---------+---------+
+| id | name   | city    | country |
++----+--------+---------+---------+
+|  4 | Sayali | Mathura | India   |
++----+--------+---------+---------+
+```
+23. OR : IF either one of the condition is true we will get the desired result
+```
+select * from student where country = "Germany" OR city = "Goa";
+```
+Here only one conditon i.e: city name is matching the records hence we got the below result
+```
++----+------+--------+---------+
+| id | name | city   | country |
++----+------+--------+---------+
+|  3 | Neha | Berlin | Germany |
++----+------+--------+---------+
+```
+
+24. Range: Searching and Sorting 
+
+Suppose you want to sort those people/employee whos id ranges between 1 to 5 then we will make use of the conditions given below.
+ ```
+ select * from student where id>=1 AND id<=5;
+ ```
+ ```
++----+------------------+----------+---------+
+| id | name             | city     | country |
++----+------------------+----------+---------+
+|  1 | Pradhynesh       | Bhandara | Delhi   |
+|  2 | Shubham Bedarkar | Amravati | MP      |
+|  3 | Neha             | Berlin   | Germany |
+|  4 | Sayali           | Mathura  | India   |
++----+------------------+----------+---------+
+
+```
+NOTE: SAME RESULT CAN BE OBAINED USING THE FOLLOWING COMMAND ```BETWEEN```
+```
+select * from student where id between 1 and 4;
+```
+```
++----+------------------+----------+---------+
+| id | name             | city     | country |
++----+------------------+----------+---------+
+|  1 | Pradhynesh       | Bhandara | Delhi   |
+|  2 | Shubham Bedarkar | Amravati | MP      |
+|  3 | Neha             | Berlin   | Germany |
+|  4 | Sayali           | Mathura  | India   |
++----+------------------+----------+---------+
+```
