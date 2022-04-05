@@ -384,3 +384,16 @@ mysql> select * from student order by id desc;
 +----+------------------+----------+---------+
 5 rows in set (0.00 sec)
 ```
+# Can we use limit and order both at once?
+Suppose we want to display bottom two entires and that too in decending order than we make uske of both limit and order by command
+```
+ select * from student order by id desc limit 2;
+ ```
+ ```
++----+---------+---------+---------+
+| id | name    | city    | country |
++----+---------+---------+---------+
+| 10 | Shubham | Nagpur  | India   |
+|  4 | Sayali  | Mathura | India   |
++----+---------+---------+---------+
+```
