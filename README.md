@@ -150,3 +150,60 @@ type: ```select * from student;``` to check the entry we made just now to ensure
 ```
 delete from student where id=15;
 ```
+
+# Clauses
+For  sorting dat we makew use opf clauses
+19. where: 
+```select * from student where city = "Nagpur";```
+```
++----+---------+--------+---------+
+| id | name    | city   | country |
++----+---------+--------+---------+
+| 10 | Shubham | Nagpur | India   |
++----+---------+--------+---------+
+```
+Method 2: to sort it with just a particular information we make use of below command:
+```
+ select name,city,country from student where country ="india";
+```
+```
++---------+---------+---------+
+| name    | city    | country |
++---------+---------+---------+
+| Sayali  | Mathura | India   |
+| Shubham | Nagpur  | India   |
++---------+---------+---------+
+```
+20: Alias : Used to changw the name temporary
+```
+select name as "USERNAME" , country as "HOMELAND" from student;
+```
+```
++------------------+----------+
+| USERNAME         | HOMELAND |
++------------------+----------+
+| Pradhynesh       | Delhi    |
+| Shubham Bedarkar | MP       |
+| Neha             | Germany  |
+| Sayali           | India    |
+| Shubham          | India    |
++------------------+----------+
+```
+21: Distinct : Do not repeat same values again and again
+```
+select distinct (country) from student;
+```
+Above and below command will give same output
+```
+select distinct country from student;
+```
+```
++---------+
+| country |
++---------+
+| Delhi   |
+| MP      |
+| Germany |
+| India   |
++---------+
+```
