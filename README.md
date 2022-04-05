@@ -434,3 +434,138 @@ select * from student;
 +----+------------------+----------+---------+
 ```
 # Like clause and search pattern
+%  = zero, on one or multiple characters (Used when we don't know how many characters it has)
+_  = represents single character (Used when we know only one character is present after it)
+
+Suppose you want to sort  out all those people whose name starts with s then follow the below command
+```
+ select * from student where name like 's%';
+ ```
+ We used % here because we dont know how many charaters it have.
+ ```
++----+------------------+----------+---------+
+| id | name             | city     | country |
++----+------------------+----------+---------+
+|  2 | Shubham Bedarkar | Amravati | MP      |
+| 10 | Shubham          | Nagpur   | India   |
++----+------------------+----------+---------+
+```
+
+Now Suppose you want to sort those students whose second letter of the city name is "a" then  follow the below command
+
+```
+ select * from student where city like '_a%';
+ ```
+ ```
++----+-------------+--------+---------+
+| id | name        | city   | country |
++----+-------------+--------+---------+
+|  4 | Aditya Jain | Nagpur | India   |
+| 10 | Shubham     | Nagpur | India   |
++----+-------------+--------+---------+
+```
+Now to sprt out a student whose last second letter is "r" then follow below command
+```
+select * from student where city like "%r_";
+```
+```
++----+------------+----------+---------+
+| id | name       | city     | country |
++----+------------+----------+---------+
+|  1 | Pradhynesh | Bhandara | Delhi   |
++----+------------+----------+---------+
+```
+# Sum and Alias together
+Suppose you want the sum of all the id's and remane the column id as total then follow the below command
+```
+ select sum(id) as "Total" from student;
+ ```
+ ```
++-------+
+| Total |
++-------+
+|    20 |
++-------+
+```
+# Average and Alias together
+Suppose you want the average of all the id's and remane the column id as average then follow the below command
+
+```select avg(id) as "Average" from student;
+```
+```
++---------+
+| Average |
++---------+
+|  4.0000 |
++---------+
+```
+
+# Count number of student present in the database
+```
+ select count(name) from student;
+ ```
+ ```
++-------------+
+| count(name) |
++-------------+
+|           5 |
++-------------+
+
++----+------------------+----------+---------+
+| id | name             | city     | country |
++----+------------------+----------+---------+
+|  1 | Pradhynesh       | Bhandara | Delhi   |
+|  2 | Shubham Bedarkar | Amravati | MP      |
+|  3 | Neha             | Berlin   | Germany |
+|  4 | Aditya Jain      | Nagpur   | India   |
+| 10 | Shubham          | Nagpur   | India   |
++----+------------------+----------+---------+
+```
+#MIN and MAX
+Suppose you want to sort out the  person having the minimum id(in terms of number)
+```
+ select name from student where id = (select min(id) from student);
+ 
+ ```
+ Here we used nested queries where in the first one we sprted the name and in the second we asked specified our need
+ ```
+ 
++------------+
+| name       |
++------------+
+| Pradhynesh |
++------------+
+
+```
+Same goes for MAX id you want to sort the person with the max id and display on the screen the n olloow the below command
+
+```
+select name from student where id = (select max(id) from student);
+```
+```
++---------+
+| name    |
++---------+
+| Shubham |
++---------+
+```
+
+
+
+
+# Happy Learning!
+We have covered the basics as well as advance concepts of MySQL .
+
+Topics covered:
+ Introduction to video
+ Video content  
+ What is database?
+ What is MySQL?
+ How to MySQL works?
+ How to install mysql in our system
+ MySQL Structure
+ Create , Drop , User database , Database Operation
+ Table Operation , Create , Drop , Alter, Rename , Update, AddColumn Insert, Update, Delete,    Select , where, and, or , not , in , between , limit , order by , offset, count,         
+ sum,avg,min,max, nested queries and other important operation
+ Like clause and search pattern
+ Foreign key and joins
