@@ -397,3 +397,40 @@ Suppose we want to display bottom two entires and that too in decending order th
 |  4 | Sayali  | Mathura | India   |
 +----+---------+---------+---------+
 ```
+# Can we update the entires??
+Suppose we want to update entry with id number 4 and name it as Aditya then we will use the below command:
+```
+ update student set name = "Aditya Jain" where id = 4;
+```
+```
+mysql> select * from student;
++----+------------------+----------+---------+
+| id | name             | city     | country |
++----+------------------+----------+---------+
+|  1 | Pradhynesh       | Bhandara | Delhi   |
+|  2 | Shubham Bedarkar | Amravati | MP      |
+|  3 | Neha             | Berlin   | Germany |
+|  4 | Aditya Jain      | Mathura  | India   |
+| 10 | Shubham          | Nagpur   | India   |
++----+------------------+----------+---------+
+```
+Now you want to update city and country for id numbre 4 ie for Aditya jain then follow below command
+
+```
+update student set city ="Nagpur" where id = 4;
+update student set country ="India" where id = 4;
+
+```
+```
+select * from student;
++----+------------------+----------+---------+
+| id | name             | city     | country |
++----+------------------+----------+---------+
+|  1 | Pradhynesh       | Bhandara | Delhi   |
+|  2 | Shubham Bedarkar | Amravati | MP      |
+|  3 | Neha             | Berlin   | Germany |
+|  4 | Aditya Jain      | Nagpur   | India   |
+| 10 | Shubham          | Nagpur   | India   |
++----+------------------+----------+---------+
+```
+# Like clause and search pattern
