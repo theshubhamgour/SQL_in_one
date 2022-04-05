@@ -605,6 +605,18 @@ This is the output we were expecting.
 | Neha        | Berlin | Canter Point      |
 +-------------+--------+-------------------+
 ```
+Now if you wish to find the entry for only one student namely aditya jain then you may use the below command: 
+
+```
+select student.name, student.city , exams.center from student, exams where student.id = exams.studentid and student.name= "Aditya Jain"; 
+```
+```
++-------------+--------+--------+
+| name        | city   | center |
++-------------+--------+--------+
+| Aditya Jain | Nagpur | SFS    |
++-------------+--------+--------+
+```
 
 # Happy Learning!
 We have covered the basics as well as advance concepts of MySQL .
