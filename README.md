@@ -549,9 +549,62 @@ select name from student where id = (select max(id) from student);
 | Shubham |
 +---------+
 ```
+# Foreign key and joins
+A FOREIGN KEY enforces data integrity, making sure the data confirms to some rules when it is added to the DB. 
+A JOIN is used when you extract/query data from the DB by giving rules how to select the data.
 
+We will now create a table name exams and connect it with student table
+```
+create table exams(roll int(15) primary key, center varchar(56), studentid int(56), foreign key (studentid) references student(id));
+```
+```
+show tables;
+```
+```
++--------------------+
+| Tables_in_employee |
++--------------------+
+| exams              |
+| student            |
++--------------------+
+```
 
+```
+ desc exams;
+ ```
+ ```
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| roll      | int         | NO   | PRI | NULL    |       |
+| center    | varchar(56) | YES  |     | NULL    |       |
+| studentid | int         | YES  | MUL | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+```
 
+Let's insert data into exams ans link with stdents
+```
+ insert into exams values(15, "St. John's School", 10);
+  insert into exams values(21, "Canter Point", 3);
+  insert into exams values(20, "SFS", 4);
+ ```
+Suppose you want those students whose exams are scheduled then we use the below command
+```
+select student.name, student.city , exams.center from student , exams where student.id = exams.studentid;
+```
+
+Here we selected student name and city from table student and name of centrer from exams and we put a conditon that the id of student from student table should match with the student id of exams.
+This is the output we were expecting.
+
+```
++-------------+--------+-------------------+
+| name        | city   | center            |
++-------------+--------+-------------------+
+| Shubham     | Nagpur | St. John's School |
+| Aditya Jain | Nagpur | SFS               |
+| Neha        | Berlin | Canter Point      |
++-------------+--------+-------------------+
+```
 
 # Happy Learning!
 We have covered the basics as well as advance concepts of MySQL .
