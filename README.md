@@ -143,3 +143,10 @@ type: ```select * from student;``` to check the entry we made just now to ensure
 | 10 | Shubham          | Nagpur   | India      |
 | 15 | Aditya Jain      | Nagpur   | Saudi Arab |
 +----+------------------+----------+------------+
+
+```
+18. To delete the data from the table for a specific user: delete from [table_name] where [col_name]=[value]
+
+```
+delete from student where id=15;
+```
